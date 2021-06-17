@@ -241,8 +241,8 @@ summary['Run Name']         = workflow.runName
 summary['Max Resources']    = "$params.max_memory memory, $params.max_cpus cpus, $params.max_time time per job"
 if (workflow.containerEngine) summary['Container'] = "$workflow.containerEngine - $workflow.container"
 summary['Output dir']       = params.outdir
-summary['Launch dir']       = workflow.launch_dir
-summary['Working dir']      = workflow.work_dir
+summary['Launch dir']       = workflow.launchDir
+summary['Working dir']      = workflow.workDir
 summary['Script dir']       = workflow.projectDir
 summary['User']             = workflow.userName
 if (workflow.profile.contains('awsbatch')) {
