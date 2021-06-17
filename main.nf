@@ -846,12 +846,8 @@ process TrimGalore {
     // Calculate number of --cores for TrimGalore based on value of task.cpus
     // See: https://github.com/FelixKrueger/TrimGalore/blob/master/Changelog.md#version-060-release-on-1-mar-2019
     // See: https://github.com/nf-core/atacseq/pull/65
-    def cores = 1
-    if (task.cpus) {
-      cores = (task.cpus as int) - 4
-      if (cores < 1) cores = 1
-      if (cores > 4) cores = 4
-      }
+    
+    cores = 1
     c_r1 = params.clip_r1 > 0 ? "--clip_r1 ${params.clip_r1}" : ''
     c_r2 = params.clip_r2 > 0 ? "--clip_r2 ${params.clip_r2}" : ''
     tpc_r1 = params.three_prime_clip_r1 > 0 ? "--three_prime_clip_r1 ${params.three_prime_clip_r1}" : ''
