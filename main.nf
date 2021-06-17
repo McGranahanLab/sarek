@@ -241,8 +241,8 @@ summary['Run Name']         = workflow.runName
 summary['Max Resources']    = "$params.max_memory memory, $params.max_cpus cpus, $params.max_time time per job"
 if (workflow.containerEngine) summary['Container'] = "$workflow.containerEngine - $workflow.container"
 summary['Output dir']       = params.outdir
-summary['Launch dir']       = workflow.launchDir
-summary['Working dir']      = workflow.workDir
+summary['Launch dir']       = params.launch_dir
+summary['Working dir']      = workflow.work_dir
 summary['Script dir']       = workflow.projectDir
 summary['User']             = workflow.userName
 if (workflow.profile.contains('awsbatch')) {
@@ -349,8 +349,8 @@ summary['Output dir']        = params.outdir
 summary['Publish dir mode']  = params.publish_dir_mode
 if (params.sequencing_center) summary['Sequenced by'] = params.sequencing_center
 
-summary['Launch dir']  = workflow.launchDir
-summary['Working dir'] = workflow.workDir
+summary['Launch dir']  = workflow.launch_dir
+summary['Working dir'] = workflow.work_dir
 summary['Script dir']  = workflow.projectDir
 summary['User']        = workflow.userName
 
