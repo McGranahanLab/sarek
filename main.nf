@@ -349,8 +349,8 @@ summary['Output dir']        = params.outdir
 summary['Publish dir mode']  = params.publish_dir_mode
 if (params.sequencing_center) summary['Sequenced by'] = params.sequencing_center
 
-summary['Launch dir']  = workflow.launch_dir
-summary['Working dir'] = workflow.work_dir
+summary['Launch dir']  = workflow.launchDir
+summary['Working dir'] = workflow.workDir
 summary['Script dir']  = workflow.projectDir
 summary['User']        = workflow.userName
 
@@ -3221,7 +3221,7 @@ process ControlFREEC {
     window = params.cf_window ? "window = ${params.cf_window}" : ""
     coeffvar = params.cf_coeff ? "coefficientOfVariation = ${params.cf_coeff}" : ""
     use_bed = params.target_bed ? "captureRegions = ${targetBED}" : ""
-    // This parameter makes Control-FREEC unstable (still in Beta according to the developers)
+    // This parameter makes Control-FREEC unstable (still in Beta according to the developers)
     // so we disable it by setting it to its default value (it is disabled by default)
     //min_subclone = params.target_bed ? "30" : "20"
     min_subclone = 100
@@ -3308,7 +3308,7 @@ process ControlFREECSingle {
     window = params.cf_window ? "window = ${params.cf_window}" : ""
     coeffvar = params.cf_coeff ? "coefficientOfVariation = ${params.cf_coeff}" : ""
     use_bed = params.target_bed ? "captureRegions = ${targetBED}" : ""
-    // This parameter makes Control-FREEC unstable (still in Beta according to the developers)
+    // This parameter makes Control-FREEC unstable (still in Beta according to the developers)
     // so we disable it by setting it to its default value (it is disabled by default)
     //min_subclone = params.target_bed ? "30" : "20"
     min_subclone = 100
